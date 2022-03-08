@@ -2,6 +2,7 @@ import { useState } from 'react'
 import img from '../assets/Logo.webp'
 import './App.css'
 import Person from './Person'
+// @ts-ignore
 import ReactModal from 'react-modal';
 function App() {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false)
