@@ -26,11 +26,7 @@ jobs:
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.0.0
-      - name: setup git config
-        run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "<>"
+        
       - name: Build React App
         run: |
           cd $GITHUB_WORKSPACE
@@ -39,9 +35,10 @@ jobs:
       - name: Deploy to GH Pages
         run: |
           cd $GITHUB_WORKSPACE/dist
-          git init
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add .
-          git commit -m "Auto-Deploy"
-          git push --force --quiet "git@github.com:FutureDeveloperZ/Obama-site.git" master:gh-pages
+          git commit -m "Build $GITHUB_SHA" || exit 0   # do not error if nothing to commit
+          git push
           
           
