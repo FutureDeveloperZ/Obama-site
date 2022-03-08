@@ -42,6 +42,6 @@ jobs:
           git init
           git add .
           git commit -m "Auto-Deploy"
-          git push --force --quiet "https://github.com/FutureDeveloperZ/Obama-site" master:gh-pages
+          git push --force --quiet "git@github.com:FutureDeveloperZ/Obama-site.git" master:gh-pages
           
           
