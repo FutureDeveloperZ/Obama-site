@@ -34,7 +34,7 @@ jobs:
           npm run build
       - name: Deploy to GH Pages
         run: |
-          cd $GITHUB_WORKSPACE/build
+          cd $GITHUB_WORKSPACE/dist
           git init
           git add .
           git commit -m "Auto-Deploy"
