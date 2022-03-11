@@ -32,7 +32,6 @@ jobs:
           cd $GITHUB_WORKSPACE
           npm i
           npm run build
-          cp **/ $GITHUB_WORKSPACE/gh-pages
       - name: Deploy to GH Pages
         run: |
           cd $GITHUB_WORKSPACE/gh-pages
