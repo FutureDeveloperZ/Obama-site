@@ -34,7 +34,7 @@ jobs:
           npm run build
       - name: Deploy to GH Pages
         run: |
-          cd $GITHUB_WORKSPACE/dist
+          cd $GITHUB_WORKSPACE/gh-pages
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add .
